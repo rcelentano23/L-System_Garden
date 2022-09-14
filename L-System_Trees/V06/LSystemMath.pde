@@ -3,6 +3,7 @@ public class LSystemMath
 
 void branch(float h, float scaling, float topAngle, float bottomAngle) 
 {
+  float d = float(int(random(h/2, h)));
   // thickness of the branch is mapped to its length
   float sw = map(h, 2, 120, 1, 5);
   strokeWeight(sw);
@@ -18,35 +19,35 @@ void branch(float h, float scaling, float topAngle, float bottomAngle)
   beginShape();
   vertex(0, 0, 0);
   vertex(0, 0, s);
-  vertex(0, -h, s);
-  vertex(0, -h, 0);
+  vertex(0, d, s);
+  vertex(0, d, 0);
   endShape(CLOSE);
   beginShape();
   vertex(s, 0, 0);
   vertex(s, 0, s);
-  vertex(s, -h, s);
-  vertex(s, -h, 0);
+  vertex(s, d, s);
+  vertex(s, d, 0);
   endShape(CLOSE);
   beginShape();
   vertex(0, 0, 0);
   vertex(s, 0, 0);
-  vertex(s, -h, 0);
-  vertex(0, -h, 0);
+  vertex(s, d, 0);
+  vertex(0, d, 0);
   endShape(CLOSE);
   beginShape();
   vertex(0, 0, s);
   vertex(s, 0, s);
-  vertex(s, -h, s);
-  vertex(0, -h, s);
+  vertex(s, d, s);
+  vertex(0, d, s);
   endShape(CLOSE);
   beginShape();
-  vertex(0, -h, 0);
-  vertex(h/40, -h, 0);
-  vertex(h/40, -h, h/40);
-  vertex(0, -h, h/40);
+  vertex(0, d, 0);
+  vertex(s, d, 0);
+  vertex(s, d, s);
+  vertex(0, d, s);
   endShape(CLOSE);
   // Move along to end
-  translate(0, -h);
+  translate(0, d);
 
   // Each branch will be 2/3rds the size of the previous one
   h *= scaling;
@@ -63,7 +64,7 @@ bottomAngle *= scaling;
     for (int i = 0; i < n; i++) {
       // Picking a random angle
       float thetaZ = random(topAngle, bottomAngle);
-      float thetaY = random(topAngle, bottomAngle);
+      float thetaY = random(2*topAngle, 2*bottomAngle);
       pushMatrix();      // Save the current state of transformation (i.e. where are we now)
       rotateZ(thetaZ);     // Rotate by theta
       rotateY(thetaY);     // Rotate by theta
@@ -79,7 +80,9 @@ void newTree() {
   pushMatrix();
   // Start the tree from the bottom of the screen
   // Start the recursive branching!
-  //translate(width/2, height);
+  //translate(width/2, 0);
+  float thetaX = random(0, PI);
+      rotateX(thetaX);     // Rotate by theta
   branch(150, .66f, -PI/2, PI/2);
   popMatrix();
 }

@@ -15,13 +15,18 @@ background(0);
 fill(50, 255, 50);
 stroke(50, 255, 50);
  lights();
-noLoop();
-for(int i = 1; i <=5; i++)
+
+if(frameCount <=5)
 {
-beginRecord("nervoussystem.obj.OBJExport", "LSystemTree_V04.0"+ i +".obj");
+beginRecord("nervoussystem.obj.OBJExport", "LSystemTree_V06.0"+ frameCount +".obj");
 
 LMath.newTree();
 
 endRecord();
 }
+}
+
+void mouseClicked()
+{
+  
 }

@@ -81,9 +81,9 @@ void newTree() {
   // Start the tree from the bottom of the screen
   // Start the recursive branching!
   //translate(width/2, 0);
+  branch(150, .66f, -PI/2, PI/2);
   float thetaX = random(0, PI);
       rotateX(thetaX);     // Rotate by theta
-  branch(150, .66f, -PI/2, PI/2);
   popMatrix();
 }
 }

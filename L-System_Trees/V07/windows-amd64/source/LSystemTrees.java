@@ -169,8 +169,8 @@ public class LSystemMath
   // Each branch will be 2/3rds the size of the previous one
   h *= scaling;
 
-topAngle *= scaling;
-bottomAngle *= scaling;
+topAngle /= scaling;
+bottomAngle /= scaling;
 //scaling *= scaling;
   // All recursive functions must have an exit condition!!!!
   // Here, ours is when the length of the branch is 2 pixels or less

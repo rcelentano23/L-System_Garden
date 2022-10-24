@@ -3,7 +3,7 @@
 L-System_Garden is a project to create randomized computer-generated scenes that mimic how the real world, especially plant life is formed.
 ## Usage
 ### Tree Generator Menu
-The fields in the .exe file inside of V09 for L-System_Trees work as follows:
+The fields in the .exe file inside of V10 for L-System_Trees work as follows:
 
 Max Angle(degrees):
 This field is responsible for the maximum angle that the L-system is allowed to turn on each iteration.
@@ -26,7 +26,7 @@ This is the number of renders that will be created when the rendering process is
 Width Divisor:
 This is the number that the height is divided by to create the width of the branches; bigger numbers = thinner branches.
 
-### LSystemTrees(L-System Render Window)
+### L-System Render Window
 This window can be controlled with the following keys/shortcuts:
 
 Enter begins the rendering process: 
